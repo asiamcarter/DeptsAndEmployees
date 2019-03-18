@@ -1,0 +1,11 @@
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\bin\Debug\netcoreapp2.2\DepartmentsAndEmployees.deps.json
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\bin\Debug\netcoreapp2.2\DepartmentsAndEmployees.runtimeconfig.json
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\bin\Debug\netcoreapp2.2\DepartmentsAndEmployees.runtimeconfig.dev.json
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\bin\Debug\netcoreapp2.2\DepartmentsAndEmployees.dll
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\bin\Debug\netcoreapp2.2\DepartmentsAndEmployees.pdb
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\obj\Debug\netcoreapp2.2\DepartmentsAndEmployees.csprojAssemblyReference.cache
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\obj\Debug\netcoreapp2.2\DepartmentsAndEmployees.csproj.CoreCompileInputs.cache
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\obj\Debug\netcoreapp2.2\DepartmentsAndEmployees.AssemblyInfoInputs.cache
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\obj\Debug\netcoreapp2.2\DepartmentsAndEmployees.AssemblyInfo.cs
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\obj\Debug\netcoreapp2.2\DepartmentsAndEmployees.dll
+C:\Users\asiam\workspace\DepartmentsAndEmployees\DepartmentsAndEmployees\obj\Debug\netcoreapp2.2\DepartmentsAndEmployees.pdb
