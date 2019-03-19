@@ -157,7 +157,7 @@ namespace DapperDepartments
             Console.WriteLine(title);
             foreach (Department dept in departments)
             {
-                Console.WriteLine(dept.DeptName);
+                Console.WriteLine($"{dept.Id}: {dept.DeptName}");
             }
         }
 
