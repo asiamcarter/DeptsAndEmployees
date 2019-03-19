@@ -239,9 +239,9 @@ namespace DapperDepartments.Data
                     //  First, we add variable names with @ signs in our SQL.
                     //  Then, we add SqlParamters for each of those variables.
                     cmd.CommandText = @"UPDATE Employee
-                                         SET  DepartmentId = @deptId
+                                         SET DepartmentId = @deptId
                                          WHERE Id = @id";
-                    cmd.Parameters.Add(new SqlParameter("@DepartmentId", employee.DepartmentId));
+                    cmd.Parameters.Add(new SqlParameter("@DeptId", employee.DepartmentId));
                     cmd.Parameters.Add(new SqlParameter("@id", id));
 
                     // Maybe we should refactor our other SQL to use parameters
@@ -407,7 +407,7 @@ namespace DapperDepartments.Data
                 }
             }
 
-
+ 
         }
     }
 }
