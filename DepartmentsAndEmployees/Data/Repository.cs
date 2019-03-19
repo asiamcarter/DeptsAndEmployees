@@ -239,11 +239,9 @@ namespace DapperDepartments.Data
                     //  First, we add variable names with @ signs in our SQL.
                     //  Then, we add SqlParamters for each of those variables.
                     cmd.CommandText = @"UPDATE Employee
-                                         SET FirstName = @firstName, LastName = @LastName, DepartmentId = @deptId
+                                         SET DepartmentId = @deptId
                                          WHERE Id = @id";
-                    cmd.Parameters.Add(new SqlParameter("@FirstName", employee.FirstName));
-                    cmd.Parameters.Add(new SqlParameter("@LastName", employee.LastName));
-                    cmd.Parameters.Add(new SqlParameter("@DepartmentId", employee.DepartmentId));
+                    cmd.Parameters.Add(new SqlParameter("@DeptId", employee.DepartmentId));
                     cmd.Parameters.Add(new SqlParameter("@id", id));
 
                     // Maybe we should refactor our other SQL to use parameters
@@ -265,12 +263,23 @@ namespace DapperDepartments.Data
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
+                    // String interpolation lets us inject the id passed into this method.
+                    cmd.CommandText = $@"SELECT FirstName, LastName, DepartmentId FROM Employee WHERE Id = {id}";
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    /*
-                     * TODO: Complete this method
-                     */
-
-                    return null;
+                    Employee employee = null;
+                    if (reader.Read())
+                    {
+                        employee = new Employee
+                        {
+                            Id = id,
+                            FirstName = reader.GetString(reader.GetOrdinal("FirstName")),
+                            LastName = reader.GetString(reader.GetOrdinal("LastName")),
+                            DepartmentId = reader.GetInt32(reader.GetOrdinal("DepartmentId"))
+                        };
+                    }
+                    reader.Close();
+                    return employee;
                 }
             }
         }
@@ -288,7 +297,7 @@ namespace DapperDepartments.Data
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
 
-                    cmd.CommandText = $@"SELECT e.Id, e.FirstName, e.LastName, d.DeptName, d.Id
+                    cmd.CommandText = $@"SELECT e.Id, e.FirstName, e.LastName, d.DeptName, d.Id as DepartmentId
                                 
                                          FROM Employee e JOIN Department d ON e.DepartmentId = d.id";
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -385,7 +394,20 @@ namespace DapperDepartments.Data
             /*
              * TODO: Complete this method using a DELETE statement with SQL
              *  Remember to use SqlParameters!
+             *  
              */
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    // More string interpolation
+                    cmd.CommandText = $@"DELETE FROM Employee WHERE Id = {id}; ";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+ 
         }
     }
 }
